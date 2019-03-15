@@ -1,0 +1,49 @@
+.htmlacademy-logo {
+  width: 150px;
+  padding-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: $main-font;
+
+  &__text {
+    @include reset-margin;
+    margin-right: 15px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $text-dark;
+    background-color: $bk-light;
+  }
+
+  &__link {
+    width: 27px;
+    height: 34px;
+  
+    &:hover svg,
+    &:focus svg {
+      fill: $bk-darkest;
+    }
+  
+    &:active svg {
+      fill: transparentize($color: $bk-darkest, $amount: 0.7);
+    }
+  }
+
+  svg {
+    fill: $accent-primary;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .htmlacademy-logo {
+    width: 200px;
+
+    &__text {
+      font-size: 18px;
+      line-height: 30px;
+    }
+  }
+}

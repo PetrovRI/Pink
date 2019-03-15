@@ -1,0 +1,412 @@
+.photo-upload {
+  font-family: $main-font;
+  background-color: $bk-light;
+
+  &__header {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__form {
+    padding: 20px;
+    background-color: $bk-dark;
+  }
+
+  &__photo {
+    display: block;
+    margin: 0 auto;
+    background-color: $bk-dark;
+  }
+
+  &__controls {
+    margin-bottom: 68px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    padding: 40px;
+    padding-bottom: 35px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    width: 48px;
+    margin-right: 34px;
+  
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__range-list {
+    @include reset-list;
+    width: 240px;
+    margin: 0 auto;
+  }
+
+  &__range-item {
+    display: none;
+    position: relative;
+    padding: 6px 0;
+    height: 14px;
+    width: 100%;
+    align-items: center;
+
+    &--selected {
+      display: block;
+    }
+  }
+
+  &__range-bar {
+    width: 100%;
+    height: 2px;
+    background-color: $bk-darkest;
+  }
+
+  &__range-pointer {
+    position: absolute;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    border: 2px solid $accent-primary;
+    border-radius: 50%;
+    background-color: $bk-light;
+
+    &:hover,
+    &:focus {
+      background-color: $accent-primary;
+    }
+
+    &--fill {
+      right: 82%;
+    }
+
+    &--crop {
+      right: 27%;
+    }
+
+    &--contrast {
+      right: 13%;
+    }
+  }
+
+  &__button {
+    @include reset-margin;
+    display: block;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 700;
+    color: $accent-primary;
+
+    &--instrument {
+      & svg {
+        fill: $bk-darkest;
+        opacity: 0.5;
+      }
+    
+      &:focus svg,
+      &:hover svg {
+        fill: $bk-darkest;
+        opacity: 1;
+      }
+    }
+
+    &--selected svg {
+      fill: $accent-primary;
+      opacity: 1;
+    }
+
+    &--crop {
+      border: none;
+      background-color: transparent;
+      width: 44px;
+      height: 44px;
+      background-repeat: none;
+    }
+
+    &--fill {
+      border: none;
+      background-color: transparent;
+      width: 48px;
+      height: 43px;
+      opacity: 0.3;
+    }
+
+    &--contrast {
+      border: none;
+      background-color: transparent;
+      width: 32px;
+      height: 32px;
+      opacity: 0.3;
+    }
+
+    &--send {
+      width: 280px;
+      padding: 15px;
+      margin-bottom: 13px;
+      border: 3px solid $accent-primary;
+      border-radius: 27px;
+    
+      &:focus,
+      &:hover {
+        color: $text-light;
+        background-color: $accent-primary;
+      }
+    
+      &:active {
+        color: transparentize($text-light, 0.7);
+      }
+    }
+
+    &--cancel {
+      width: 280px;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 3px solid transparentize($text-dark, 0.9);
+      border-radius: 24px;
+      color: transparentize($text-dark, 0.9);
+      background-color: transparent;
+    
+      &:hover,
+      &:focus {
+        border-color: transparentize($text-dark, 0.7);
+        color: transparentize($text-dark, 0.7);
+      }
+    
+      &:focus {
+        background-color: transparentize($text-dark, 0.7);
+        color: transparentize($text-light, 0.7);
+      }
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .photo-upload {
+
+    &__header {
+      font-size: 18px;
+      width: 660px;
+      padding: 21px;
+      padding-bottom: 49px;
+    }
+
+    &__form {
+      height: 511px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      padding-top: 40px;
+    }
+
+    &__photo {
+      width: 300px;
+      padding-top: 17px;
+      margin-right: 45px;
+    }
+
+    &__controls {
+      flex-direction: row;
+      margin-bottom: 63px;
+    }
+
+    &__list {
+      width: 55px;
+      padding-top: 0;
+      padding-right: 0;
+      padding-left: 0;
+      padding-bottom: 0;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    &__item {
+      width: 55px;
+      min-height: 73px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid transparentize($bk-darkest, 0.9);
+    }
+
+    &__range-list {
+      width: 220px;
+    }
+
+    &__range-item {
+      display: block;
+      height: 73px;
+      padding: 35px 0;
+      padding-right: 18px;
+      border-bottom: 1px solid transparentize($bk-darkest, 0.9);
+    }
+
+    &__range-pointer {
+      top: 29px;
+
+      &--contrast {
+        right: 50%;
+      }
+    }
+
+    &__button {
+
+      &--crop {
+        width: 22px;
+        height: 22px;
+        margin-left: 3px;
+      }
+
+      &--fill {
+        width: 25px;
+        height: 22px;
+        margin-left: 3px;
+      }
+
+      &--contrast {
+        width: 16px;
+        height: 16px;
+        margin-left: 7px;
+      }
+
+      &--send {
+        width: 260px;
+        margin-right: 12px;
+        margin-bottom: 25px;
+      }
+
+      &--cancel {
+        width: 260px;
+        margin-right: 12px;
+      }
+    }
+
+
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .photo-upload {
+
+    &__header {
+      padding: 15px;
+      padding-bottom: 45px;
+    }
+
+    &__form {
+      width: 940px;
+      height: 514px;
+      margin: 0 auto;
+      padding-left: 80px;
+      padding-right: 70px;
+    }
+
+    &__photo {
+      margin-right: 90px;
+    }
+
+    &__list {
+      width: 92px;
+      padding-bottom: 0;
+    }
+
+    &__item {
+      width: 100%;
+    }
+
+    &__range-list {
+      width: 318px;
+    }
+
+    &__range-item {
+      padding-right: 30px;
+    }
+
+    &__button {
+
+      &--crop {
+        width: 44px;
+        height: 44px;
+      }
+
+      &--fill {
+        width: 48px;
+        height: 43px;
+      }
+
+      &--contrast {
+        width: 32px;
+        height: 32px;
+      }
+
+      &--send {
+        margin-left: 0;
+        margin-right: 0;
+        width: 183px;
+        border-radius: 30px;
+      }
+
+      &--cancel {
+        margin-left: 0;
+        margin-right: 0;
+        width: 183px;
+        border-radius: 30px;
+      }
+    }
+  }
+}
+
+
+@media (min-width: $tablet-width) {
+  .icon-editor {
+    &-crop {
+      width: 22px;
+      height: 22px;
+    }
+
+    &-fill {
+      width: 25px;
+      height: 22px;
+    }
+
+    &-contrast {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+
+.icon-editor {
+  @media (min-width: $desktop-width) {
+    &-crop {
+      width: 44px;
+      height: 44px;
+    }
+
+    &-fill {
+      width: 48px;
+      height: 43px;
+    }
+
+    &-contrast {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.button__merger {
+  @media (min-width: $desktop-width) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+

@@ -1,0 +1,604 @@
+.contest {
+  font-family: $main-font;
+  line-height: 30px;
+  background-color: $bk-light;
+
+  &__header {
+    @include reset-margin;
+    padding-top: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 400;
+    text-align: center;
+    color: $text-dark;
+  }
+
+  &__invite {
+    @media (max-width: $tablet-width - 1) {
+      @include visually-hidden;
+    }
+  }
+
+  &__form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 960px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+  }
+
+  &__fieldsetwrapper {
+    width: 100%;
+    padding-top: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+
+    &--names {
+      order: -2;
+    }
+
+    &--archivements {
+      order: -1;
+      background-color: $bk-dark;
+    }
+
+    &--app {
+      background-color: $bk-dark;
+    }
+  }
+
+  &__fieldset {
+    padding: 0;
+    margin: 0;
+    border: none;
+
+    &--archivements {
+      border: 2px solid $bk-dark;
+    }
+  }
+
+  &__flexwrapper--contacts {
+    justify-content: space-between;
+  }
+
+  &__legend {
+    margin: 0 auto;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 18px;
+
+    &--contacts {
+      @media (max-width: $tablet-width - 1) {
+        @include visually-hidden;
+      }
+    }
+
+    &--emotions {
+      margin-bottom: 0;
+    }
+
+    &--app {
+      padding-top: 10px;
+    }
+  }
+
+  &__fieldwrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 11px;
+
+    &--checkbox {
+      padding-left: 48px;
+      margin-bottom: 42px;
+    
+      &:last-child {
+        margin-bottom: 12px;
+      }
+    }
+
+    &--radio {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      padding-left: 48px;
+      margin-bottom: 35px;
+    
+      &:last-child {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__label {
+    padding: 5px 20px;
+    font-size: 18px;
+
+    &--archivements {
+      position: relative;
+      padding-right: 0;
+    
+      &::before {
+        content: "";
+        position: absolute;
+        left: -50px;
+        top: 0;
+        display: block;
+        width: 39px;
+        height: 39px;
+        border: 2px solid #e5e5e5;
+        background-color: $bk-light;
+      }
+    }
+
+    &--app {
+      position: relative;
+    
+      &::before {
+        content: "";
+        position: absolute;
+        left: -50px;
+        top: 0;
+        display: block;
+        width: 39px;
+        height: 39px;
+        border: 2px solid #e5e5e5;
+        background-color: $bk-light;
+        border-radius: 50%;
+      }
+    
+      &::after {
+        content: "";
+        display: none;
+        position: absolute;
+        left: -38px;
+        top: 13px;
+        width: 14px;
+        height: 14px;
+        border: 1px solid $accent-primary;
+        background-color: $accent-primary;
+        border-radius: 50%;
+      }
+    }
+  }
+  &__input {
+    width: 100%;
+
+    &--text {
+      padding: 22px 18px;
+      border: 2px solid $bk-dark;
+    
+      &::placeholder {
+        font-size: 18px;
+        line-height: 30px;
+        color: $text-dark;
+      }
+    }
+
+    &--text:hover,
+    &--text:focus {
+      border-color: $bk-darkest;
+      outline: none;
+    }
+
+    &--text:active {
+      border-color: $accent-primary;
+    }
+
+    &--textarea {
+      width: 100%;
+      height: 201px;
+      padding: 15px 19px;
+      margin-bottom: 10px;
+      border: 2px solid $bk-dark;
+      font-size: 18px;
+      line-height: 30px;
+    }
+
+
+
+    ///
+
+    &[type="radio"]:focus + .contest__label--app::before,
+    &[type="radio"]:hover + .contest__label--app::before {
+      border-color: $bk-darkest;
+    }
+
+    &[type="radio"]:active + .contest__label--app::before {
+      border-color: $accent-primary;
+    }
+
+    &[type="radio"]:checked + .contest__label--app::after {
+      display: block;
+    }
+
+    &[type="checkbox"]:focus + .contest__label--archivements::before,
+    &[type="checkbox"]:hover + .contest__label--archivements::before {
+      border-color: $bk-darkest;
+    }
+
+    &[type="checkbox"]:active + .contest__label--archivements::before {
+      border-color: $accent-primary;
+    }
+
+    &[type="checkbox"]:checked + .contest__label--archivements::before {
+      background-image: url("../img/icon-check.svg");
+      background-size: 22px 16px;
+      background-repeat: no-repeat;
+      background-position: left 50% top 50%;
+    }
+  }
+
+  &__accent {
+    font-size: 14px;
+    color: $accent-primary;
+    text-transform: uppercase;
+  }
+
+  &__sendwrapper {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__submit-button {
+    width: 280px;
+    margin-bottom: 25px;
+    padding: 20px;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: $text-light;
+    background-color: $accent-secondary;
+
+    &:hover,
+    &:focus {
+      background-color: darken($accent-secondary, 5%);
+    }
+  
+    &:active {
+      background-color: darken($accent-secondary, 10%);
+      color: transparentize($text-light, $amount: 0.7);
+    }
+  }
+
+  &__note {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+}
+
+
+
+//////////////////////////// TABLET //////////////////////////////
+@media (min-width: $tablet-width) {
+  .contest {
+
+    &__header {
+      margin: 0 auto;
+      font-size: 18px;
+      padding: 90px 80px;
+      padding-bottom: 45px;
+    }
+
+    &__form {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    &__fieldsetwrapper {
+
+      &--archivements {
+        width: 100%;
+        order: 0;
+        background-color: $bk-light;
+        margin-bottom: 0;
+        padding-bottom: 15px;        
+      }
+
+      &--app {
+        order: -1;
+        background-color: $bk-light;
+        padding-bottom: 0;
+        margin-bottom: 15px;
+      }
+    }
+
+    &__fieldset{
+
+      &--app {
+        border: 2px solid $bk-dark;
+      }
+
+      &--contacts {
+        border: 2px solid $bk-dark;
+      }
+
+      &--archivements {
+        padding-left: 58px;
+        padding-right: 58px;
+      }
+
+      &--emotions {
+        padding-left: 57px;
+        padding-right: 57px;
+        border: 2px solid $bk-dark;
+      }
+    }
+
+    &__legend {
+      
+      &--emotions {
+        margin-bottom: 20px;
+      }
+
+      &--app {
+        padding-top: 0;
+        margin-bottom: 30px;
+      }
+
+      &--archivements {
+        padding-top: 0;
+        margin-bottom: 29px;
+      }
+    }
+    &__fieldwrapper{
+
+      &--names {
+        margin-bottom: 54px;
+        flex-direction: row;
+        align-items: center;
+    
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &--contacts {
+        padding: 0 58px;
+        flex-direction: column-reverse;
+        margin-bottom: 35px;
+      
+        &:last-child {
+          margin-bottom: 20px;
+        }
+      }
+
+      &--checkbox {
+        padding-left: 0;
+      
+        &:last-child {
+          margin-bottom: 48px;
+        }
+      }
+
+      &--radio {
+        padding-left: 96px;
+
+        &:last-child {
+          margin-bottom: 52px;
+        }
+      }
+    }
+    &__label {
+
+      &--names {
+        padding-left: 0;
+      }
+
+      &--archivements {
+        padding-left: 60px;
+
+        &::before {
+          left: 0;
+        }
+      }
+
+      &--app {
+        
+        &::before {
+          left: -41px;
+        }
+
+        &::after {
+          left: -29px;
+        }
+      }
+    }
+
+    &__input--textarea {
+      height: 196px;
+      margin-bottom: 40px;
+    }
+
+    &__sendwrapper {
+      width: 100%;
+      padding-top: 38px;
+      padding-bottom: 45px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__submit-button {
+      width: 300px;
+      margin-bottom: 0;
+    }
+
+    &__note-extender {
+      @media (max-width: $tablet-width - 1) {
+        @include visually-hidden;
+      }
+    }
+  }
+
+}
+
+
+
+@media (min-width: $desktop-width) {
+  .contest {
+
+    &__header {
+      width: 950px;
+      padding: 93px;
+      padding-bottom: 48px;
+    }
+
+    &__form {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    &__fieldsetwrapper{
+
+      &--names {
+        width: 435px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 37px;
+      }
+
+      &--contacts {
+        width: 100%;
+        padding-top: 8px;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      &--archivements {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 40px;      
+      }
+
+      &--app {
+        width: 435px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 18px;
+      }
+
+      &--emotions {
+        width: 100%;
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 5px;
+      }
+    }
+
+    &__fieldset{
+
+      &--contacts {
+        padding-left: 57px;
+        padding-right: 57px;
+      }
+
+      &--archivements {
+        padding-left: 57px;
+        padding-right: 57px;
+        padding-top: 5px;
+        padding-bottom: 12px;
+      }
+
+      &--emotions {
+        width: 100%;
+      }
+    }
+
+    &__flexwrapper {
+      display: flex;
+
+      &--archivements {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    &__legend {
+
+      &--app {
+        margin-bottom: 30px;
+      }
+
+      &--archivements {
+        padding-top: 0;
+        margin-bottom: 25px;
+      }
+    }
+
+    &__fieldwrapper {
+
+      &--contacts {
+        width: 375px;
+        margin-bottom: 10px;
+        padding-left: 0;
+        padding-right: 60px;
+      
+        &:last-child {
+          margin-bottom: 10px;
+        }
+      }
+
+      &--checkbox {
+        & .contest__label--archivements {
+          padding-right: 0;
+        }
+      }
+
+      &--shark {
+        order: -4;
+        width: 260px;
+      }
+
+      &--beach {
+        order: -1;
+        width: 260px;
+      }
+
+      &--soven {
+        width: 245px;
+      }
+
+      &--tower {
+        order: -2;
+        width: 210px;
+      }
+
+      &--hotel {
+        width: 210px;
+        margin-bottom: 42px;
+      }
+
+      &--radio {
+        padding-left: 112px;
+      }
+    }
+
+    &__input--textarea {
+      height: 128px;;
+    }
+
+    &__sendwrapper {
+      width: 940px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+      padding-top: 25px;
+    }
+  }
+}

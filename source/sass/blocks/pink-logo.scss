@@ -1,0 +1,64 @@
+.pink-logo {
+  width: 75px;
+  height: 23px;
+
+  &__image {
+    display: none;
+    fill: $bk-light;
+    color: $bk-light;
+
+    &:hover,
+    &:focus {
+      color: $accent-primary;
+    }
+  
+    &:active {
+      fill: $accent-primary;
+      color: $bk-light;
+      opacity: 0.3;
+    }
+
+    &--footer {
+      fill: $accent-primary;
+      color: $bk-darkest;
+    
+      &:active {
+        color: $bk-darkest;
+      }
+    }
+
+    &--mobile {
+      @media (max-width: $tablet-width - 1) {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .pink-logo {
+    width: 147px;
+    height: 40px;
+
+    &__image--tablet {
+      @media (min-width: $tablet-width) and (max-width: $desktop-width - 1) {
+        display: block;
+      }
+    }
+  }
+}
+
+
+@media (min-width: $desktop-width) {
+  .pink-logo {
+    width: 200px;
+
+    &__image {
+      fill: $accent-primary;
+      &--desktop {
+        display: block;
+      }
+    }
+  }
+}
+

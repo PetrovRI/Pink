@@ -1,0 +1,38 @@
+.page-footer {
+  height: 284px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: $tablet-width) {
+  .page-footer {
+    height: 128px;
+    padding: 36px 20px;
+    flex-direction: row;
+  }
+
+}
+
+@media (min-width: $desktop-width) {
+  .page-footer {
+    width: 960px;
+    height: 194px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 auto;
+
+    &__logo {
+      width: 200px;
+    }
+  }
+}
+
+.page-footer--main-page {
+  @media (max-width: $tablet-width - 1) {
+    @include visually-hidden;
+  }
+}
+

@@ -1,0 +1,170 @@
+.main-nav {
+  font-family: $main-font;
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $text-light;
+
+  &__list {
+    display: none;
+    @include reset-list;
+    background-color: $bk-darkest;
+
+    &--open {
+        display: block; 
+    }
+  }
+
+  &__item {
+    width: 100%;
+    min-height: 64px;
+    padding: 8px;
+    display: flex;
+    text-align: center;
+  }
+
+  &__link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: inherit;
+
+    &:hover,
+    &:active {
+      color: $accent-primary;
+    }
+  }
+
+
+
+  // стили для гамбургер кнопки
+  &__toggler {
+    z-index: 3;
+    right: 0;
+    position: absolute;
+    top: 4px;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: none;
+    
+
+    &:hover,
+    &:active {
+      span {
+        background-color: $accent-primary;
+        transition: .1s;
+
+        &::before,
+        &::after {
+          background-color: $accent-primary;
+          transition: .1s;
+        }
+      }
+    }
+      
+
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -25px;
+      margin-top: -2px;
+      width: 50px;
+      height: 4px;
+      background-color: #ffffff;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        margin-left: -25px;
+        margin-top: -2px;
+        width: 50px;
+        height: 4px;
+        background-color: #ffffff;
+        transition: .2s;
+
+      }
+
+      &::before {
+        transform: translateY(-10px)
+      }
+
+      &::after {
+        transform: translateY(10px)
+      }
+    }
+
+    &--active {
+      span {
+        height: 0;
+
+        &:hover::before,
+        &:hover::after,
+        &:focus::before,
+        &:focus::after {
+          background-color: $accent-primary;
+        }
+
+        &::before{
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .main-nav {
+
+    &__list {
+      background-color: $bk-darkest;
+    }
+
+    &__toggler {
+      position: absolute;
+      top: 24px;
+    }
+  }
+}
+
+@media (max-width: $desktop-width - 1) {
+.main-nav__item {
+  border-top: 1px solid transparentize(#ffffff, $amount: 0.85);
+  border-bottom: 1px solid black;
+}
+
+}
+
+@media (min-width: $desktop-width) {
+  .main-nav {
+      display: flex;
+      text-transform: none;
+
+      &__list {
+          position: static;
+          display: flex;
+          justify-content: flex-end;
+          width: 620px;
+          align-items: center;
+          background-color: transparent;  
+      }
+
+      &__toggler {
+       display: none;
+        
+      }
+  }
+  
+} 

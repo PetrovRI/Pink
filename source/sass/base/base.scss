@@ -1,0 +1,35 @@
+body {
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+$small-width: 320px;
+$larger-width: 660px;
+$largest-width: 960px;
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
+
+$mobile-width: 320px;
+$tablet-width: 660px;
+$desktop-width: 960px;
+

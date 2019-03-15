@@ -1,0 +1,55 @@
+.map {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-top: 35px;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: url("../img/bg-map-mobile@1x.png");
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-color: #e2e7d3;
+
+  &__triangle {
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/bg-triangle-white-footer.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top left;
+  }
+
+  &__iframe {
+    width: 100%;
+    height: 200px; 
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .map {
+    height: 375px;
+    margin-top: 0;
+    background-image: url("../img/bg-map-tablet@1x.jpg");
+
+    &__iframe {
+      height: 375px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .map {
+    width: 100%;
+    height: 500px;
+    background-image: url("../img/bg-map-desktop@1x.jpg");
+
+    &__iframe {
+      height: 500px;
+    }
+  }
+}
+

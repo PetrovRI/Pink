@@ -1,0 +1,27 @@
+.tariff {
+  font-family: $OpenSans;
+  background-color: $white;
+
+  &__value {
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 400;
+    color: $blue;
+
+    &--name {
+      font-size: 18px;
+      font-weight: 700;
+      color: $white;
+      background-color: $blue;
+    }
+
+    &--price {
+      font-size: 24px;
+      font-weight: 300;
+      color: $white;
+      background-color: $blue;
+    }
+  }
+}
+
+
